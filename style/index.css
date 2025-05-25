@@ -1,0 +1,822 @@
+/* Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ 
+/* Outfit */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    /* font-family: "Outfit", sans-serif; */
+}
+
+:root {
+    --yellow: #fcd978;
+    --main-orange: #f29c52;
+    --main-brown: #492d13;
+    --link-color: #493d13;
+    --home-bg-color: #fff5ed;
+}
+
+a {
+    display: inline-block;
+    color: white;
+}
+
+section {
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.home {
+    padding-top: 120px;
+}
+
+/* ---------------------------------------- */
+/* Go Up Arrow */
+.up {
+    position: fixed;
+    background-color: var(--main-orange);
+    width: 50px;
+    height: 50px;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    bottom: 25px;
+    right: 20px;
+    z-index: 999;
+    transition: 0.5s;
+}
+
+.up:hover {
+    background-color: #f1a868;
+}
+
+/* -------------------------------------- */
+.header-container {
+    padding: 0 6%;
+}
+
+header {
+    text-transform: capitalize;
+    height: 90px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 550;
+    align-items: center;
+}
+
+nav a {
+    padding-left: 40px;
+    color: var(--link-color);
+}
+
+.logo {
+    margin-top: -10px;
+    padding-left: 30px;
+    font-weight: bold;
+    font-size: 2.3rem;
+    color: var(--main-brown);
+}
+
+.logo span {
+    color: var(--main-orange);
+    font-size: 2.5rem;
+}
+
+/* ------------Dropdown menu------------- */
+
+.dropdown-header {
+    display: inline-block;
+    position: relative;
+}
+
+/* dropdown-header arrow shape */
+.dropdown-header::before {
+    content: "";
+    position: absolute;
+    border-bottom: 9px solid transparent;
+    border-top: 9px solid var(--link-color);
+    border-right: 9px solid transparent;
+    border-left: 9px solid transparent;
+    top: 8px;
+    left: 93px;
+    cursor: pointer;
+}
+
+/* "dropdown-content" is a div inside dropdown-header div */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 23px;
+    left: 40px;
+    width: 200px;
+    z-index: 90;
+    /* overflow: hidden; */
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, .13), 0 1px 2px 0 rgba(0, 0, 0, .11);
+    background-color: white;
+    border-bottom: 4px solid var(--main-orange);
+}
+
+.dropdown-content a {
+    border-bottom: 2px solid var(--main-orange);
+    display: block;
+    padding: 20px;
+}
+
+.dropdown-header:hover .dropdown-content {
+    display: block;
+}
+
+.nav-hover:hover {
+    color: var(--main-orange);
+}
+
+/* ------------------------- */
+
+.reservation-btn {
+    background-color: var(--main-orange);
+    padding: 15px 40px;
+    border-radius: 40px;
+    position: relative;
+    top: -1px;
+    transition: .5s;
+}
+
+.reservation-btn:hover {
+    background-color: var(--main-brown);
+}
+
+.my-cart {
+    width: 50px;
+    height: 50px;
+    border: 2px dashed var(--main-orange);
+    border-radius: 50px;
+    padding: 1px;
+}
+
+.my-cart img {
+    position: relative;
+    top: 10px;
+    left: 6px;
+    width: 30px;
+}
+
+.my-cart {
+    margin-right: 20px;
+}
+
+/* -----------home--------------------------------------------------------------- */
+
+.home {
+    background-image: url(images/hero-bg-pattern.png);
+    background-size: cover;
+    background-position: 50%;
+    background-color: var(--home-bg-color);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.home .image-three img {
+    width: 530px;
+}
+
+.home .h1-one {
+    color: var(--main-brown);
+    font-size: 5.5rem;
+    line-height: .95;
+}
+
+.home .image-two {
+    margin-right: 63px;
+}
+
+.btn {
+    font-size: 20px;
+    background-color: var(--main-orange);
+    padding: 20px;
+    width: 200px;
+    border-radius: 40px;
+    position: relative;
+    text-align: center;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn:hover {
+    background-color: var(--main-brown);
+}
+
+.home .h1-one::before {
+    content: "Get 80% discount";
+    color: var(--main-orange);
+    position: absolute;
+    font-size: 40px;
+    font-weight: 550;
+    top: 155px;
+    left: 48px;
+}
+
+/* --------------------------------------------------------------- */
+.cake-category {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    justify-content: space-around;
+}
+
+.cake-category div {
+    border: 2px solid var(--home-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 40px;
+    border-radius: 200px;
+    width: 250px;
+    height: 250px;
+    align-items: center;
+    transition: .5s;
+}
+
+.cake-category div:hover {
+    border: 2px dashed var(--main-orange);
+    background-color: var(--home-bg-color);
+    cursor: pointer;
+}
+
+/* change p color when hovering on div */
+.cake-category div:hover p {
+    color: var(--main-orange);
+}
+
+.sweet p {
+    font-weight: 550;
+    font-size: 25px;
+    color: var(--main-brown);
+}
+
+.sweet img {
+    width: 120px;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* services */
+
+.services {
+    background-color: var(--main-orange);
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
+}
+
+.service-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 120px;
+    margin-left: 10px;
+    color: white;
+    text-transform: capitalize;
+}
+
+.service-image {
+    position: relative;
+    margin: 10px;
+    background-color: white;
+    margin-right: 40px;
+    margin-left: 40px;
+    width: 120px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.service-image img {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+
+.service-image::before {
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    top: -9px;
+    left: -8.5px;
+    border: 1px dashed white;
+}
+
+.service-title {
+    font-size: 23px;
+    font-weight: 560;
+    margin-bottom: 10px;
+}
+
+.service-text {
+    font-size: 15px;
+}
+
+/* -------------------------------------------------- */
+.products {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: var(--home-bg-color);
+
+    background-image: url(images/products-section-bg-image-1.png), url(images/products-section-bg-image-2.png);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.title {
+    text-align: center;
+}
+
+.title p {
+    color: var(--main-orange);
+    font-weight: 550;
+    background-color: white;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    height: 40px;
+    box-shadow: 0 1px 20px 12px rgba(73, 45, 19, .06);
+}
+
+.title h2 {
+    color: var(--main-brown);
+    text-transform: capitalize;
+    font-size: 45px;
+}
+
+.products-list {
+    padding-top: 100px;
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 280px);
+    row-gap: 15px;
+    justify-content: space-around;
+}
+
+.item-image img {
+    width: 170px;
+}
+
+.item {
+    position: relative;
+    background-color: white;
+    width: 272px;
+    height: 320px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(73, 45, 19, .04);
+    transition: .5s;
+}
+
+.item-name {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--main-brown);
+}
+
+.item-price {
+    text-align: center;
+    font-weight: 700;
+    color: gray;
+}
+
+.item-price span {
+    color: var(--main-orange);
+}
+
+/* Start Span as a pseudo element */
+.item .hover-btn {
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 0;
+    bottom: 20px;
+    left: 0;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    transition: 0.5s 0.5s;
+    overflow: hidden;
+}
+
+.item:hover .hover-btn {
+    height: 35%;
+}
+
+/* End Span as a pseudo element */
+
+.item .hover-btn button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+    color: white;
+    background-color: var(--main-orange);
+    border: none;
+    padding: 12px 15px;
+    width: 190px;
+    font-weight: 550;
+    font-size: 20px;
+    border-radius: 50px;
+    transition: .5s;
+}
+
+.item:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.item:hover .item-name,
+.item:hover .item-price {
+    visibility: hidden;
+}
+
+.item .hover-btn button:hover {
+    background-color: var(--main-brown);
+}
+
+#muffin {
+    width: 150px;
+}
+
+#pound {
+    width: 120px;
+}
+
+#cinnamon {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* offer */
+
+.offer {
+    margin-top: 100px;
+    background-color: var(--home-bg-color);
+    height: 350px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    background-image: url(images/discount-offer-shape.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.offer-image {
+    background-image: url(images/offer-bread-image.png);
+    background-size: 450px;
+    height: 100vh;
+    background-repeat: no-repeat;
+    grid-column: 2/6;
+
+}
+
+.offer-content {
+    color: var(--main-brown);
+    grid-column: 6/9;
+    padding-bottom: 250px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.offer-content p {
+    color: var(--main-orange);
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.offer-content h2 {
+    font-size: 40px;
+}
+
+.offer-content h2 span {
+    color: var(--main-orange);
+    text-decoration: underline;
+}
+
+.offer-content .btn {
+    margin-top: 20px;
+    padding: 12px;
+}
+
+/* ---------------------------------------------------------------------------------- */
+.blogs {
+    margin-top: 100px;
+    background-color: var(--home-bg-color);
+    padding-bottom: 97px;
+}
+
+.blog {
+    background-image: linear-gradient(to bottom, blanchedalmond, rgba(247, 174, 110, 0.3));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 360px;
+    height: 500px;
+    padding: 20px;
+    padding-top: 0;
+    border-radius: 20px;
+}
+
+.blog p {
+    color: var(--main-orange);
+    font-weight: 550;
+}
+
+.blog h3 {
+    color: var(--main-brown);
+    font-size: 23px;
+}
+
+.blog .btn {
+    width: 150px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: transparent;
+    color: var(--main-brown);
+    border: 2px solid var(--main-orange);
+}
+
+.blog .btn:hover {
+    background-color: var(--main-orange);
+    color: white;
+}
+
+.blogs-list {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 370px);
+    justify-content: space-around;
+}
+
+/* ---------------------------------------------- */
+.footer .title p {
+    width: 300px;
+}
+
+.footer {
+    background-image: url(images/rservation-element.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-color: var(--home-bg-color);
+    margin-bottom: -15px;
+    padding-bottom: 0;
+    margin-top: 100px;
+}
+
+.form-container {
+
+    padding: 80px;
+    margin-top: 50px;
+    background-image: url(images/reservation-bg.jpg);
+    background-repeat: no-repeat;
+    height: 671px;
+    width: 1171px;
+}
+
+.form-container form input {
+    border: none;
+    outline: none;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-container form {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+}
+
+.grid-col-span {
+    grid-column: span 4;
+}
+
+#message {
+    grid-column: 1/-1;
+    padding-bottom: 250px;
+}
+
+/* ------------------------- */
+
+/* Attribute Selector */
+input[type=number] {
+    background-color: var(--main-orange);
+}
+
+input[type=number]::placeholder {
+    color: white;
+}
+
+/* ------------------------- */
+
+form .btn {
+    width: 250px;
+    grid-column: 6/8;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+/* -------------------------------------------------------------------- */
+/* brown footer */
+
+.b-f {
+    position: relative;
+    background-image: url(images/footer-brown-bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    padding-top: 74px;
+    padding-bottom: 63px;
+    margin-bottom: 0;
+}
+
+/* to remove the annoying line in the image */
+.b-f::before {
+    position: absolute;
+    content: "";
+    width: 99%;
+    background-color: var(--main-brown);
+    height: 10px;
+    left: 5px;
+    top: 19px;
+}
+
+.brown-footer a {
+    display: block;
+    transition: .3s;
+}
+
+.brown-footer a:hover {
+    color: var(--main-orange);
+}
+
+.brown-footer h3 {
+    color: white;
+
+}
+
+.foot-div {
+    width: 320px;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.foot-div .icon {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 70%;
+}
+
+.foot-div .icon img {
+    position: relative;
+    top: 22px;
+    left: 22px;
+}
+
+.brown-footer {
+    margin-top: -15px;
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    justify-content: space-around;
+}
+
+.foot-div .text h3 {
+    padding-bottom: 20px;
+}
+
+.f-div1 {
+    width: 310px;
+}
+
+.f-div3 {
+    width: 357px;
+}
+
+/* ------------------------------------------------------------------------------ */
+.go-up-btn a {
+    position: relative;
+    font-size: 14px;
+    background-color: var(--main-orange);
+    padding: 20px;
+    width: 63px;
+    border-radius: 160px;
+    position: relative;
+    text-align: center;
+    font-weight: 500;
+    transition: .5s;
+    left: 1183px;
+    bottom: 89px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------------------- */
+/* Responsive */
+
+@media screen and (min-width:2450px) {
+    .responsive-section {
+        padding-left: 660px;
+        padding-right: 660px;
+        justify-content: space-around;
+    }
+
+    .home .h1-one::before {
+        left: 670px;
+    }
+
+    .offer-content {
+        padding-bottom: 565px;
+    }
+
+    .offer-image {
+        grid-column: 3/6;
+    }
+
+    .offer-content p,
+    .offer-content h2 {
+        font-size: 45px;
+    }
+}
+
+/*  */
+
+@media screen and (min-width:2000px) {
+    .responsive-section {
+        padding-left: 400px;
+        padding-right: 400px;
+    }
+
+    .cake-category {
+        padding-left: 416px
+    }
+
+    .home .h1-one::before {
+        left: 426px;
+    }
+
+    .offer-content {
+        padding-bottom: 600px;
+    }
+
+    .offer-image {
+        grid-column: 3/6;
+        margin-bottom: 200px;
+    }
+
+    .offer-content p,
+    .offer-content h2 {
+        font-size: 45px;
+    }
+}
