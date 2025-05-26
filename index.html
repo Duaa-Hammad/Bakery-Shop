@@ -5,380 +5,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bakery Shop</title>
-    <!-- Font Awesome CSS file -->
+    <!-- css bootstrap file -->
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome css file -->
     <link rel="stylesheet" href="Font Awesome/all.min.css">
-    <!-- my CSS file -->
-    <link rel="stylesheet" href="style/index.css">
+    <!-- Outfit Font -->
+    <link rel="stylesheet" href="Fonts/Outfit.css">
+    <!-- my css file -->
+    <link rel="stylesheet" href="style/main.css">
 </head>
 
 <body>
-    <!-- ------------------------------------------------- -->
-    <!-- Go Up Arrow -->
-    <a href="#navbar" class="up">
-        <i class="fa-solid fa-arrow-up"></i> 
-    </a>
-    <!-- -------------------------------------------------- -->
-    <div class="header-container">
-        <header class="responsive-section" id="navbar">
-            <a href="#home" class="logo">Jain<span>Ery</span></a>
-            <nav>
-                <a class="nav-hover" href="#home">home</a>
-                <a class="nav-hover" href="#about">about</a>
-                <a class="nav-hover" href="#products">products</a>
-                <a class=" nav-hover" href="#blogs">blogs</a>
-                <!-- ------------------- -->
-                <div class="dropdown-header">
-                    <a href="#" class="nav-hover">pages</a>
-                    <div class="dropdown-content">
-                        <a class=" nav-hover" href="https://jainery.webflow.io/" target="_blank">Original Website</a>
-                        <a class=" nav-hover" href="">FAQ</a>
-                        <a class=" nav-hover" href="">404</a>
-                        <a class=" nav-hover" href="">License</a>
-                        <a class=" nav-hover" href="">Changelog</a>
-                        <a class=" nav-hover" href="">Style Guide</a>
+    <!-- ------------------Start Navbar------------------ -->
+    <nav class="navbar navbar-expand-lg navbar-light main-nav">
+        <a class="navbar-brand" href="#">
+            <span>Jain</span><span>Ery</span>
+        </a>
+        <!-- Start toggle button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- End toggle button -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blogs</a>
+                </li>
+                <!-- Start Dropdown List -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
-                </div>
-                <!-- ---------------------- -->
-                <a class="nav-hover contact" href="#contact">contact</a>
-            </nav>
-            <div>
-                <a class="my-cart" href="#cart"><img src="style/images/cart-icon.svg" alt=""></a>
-                <a class="reservation-btn" href="#cart">book reservation</a>
+                </li>
+                <!-- End Dropdown List -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+            <div class="cart-icon">
+                <img src="style/images/cart-icon.svg" alt="cart icon">
             </div>
-        </header>
-    </div>
-
-    <!-- ----------------------------------------------- -->
-    <!-- section one -->
-    <section class="home responsive-section" id="home">
-        <div class="h1-one">
-            <h1>Fresh Bakery Foods.</h1>
-            <a class="btn" href="#">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-        <div class="image-two">
-            <img src="style/images/hero-separator.svg" alt="">
-        </div>
-        <div class="image-three">
-            <img src="style/images/bakery-home-image.png" alt="">
-        </div>
-    </section>
-
-    <!-- ----------------------------------------- -->
-    <!-- section two -->
-    <section class="cake-category responsive-section">
-        <!-- 1 -->
-        <div class="sweet">
-            <img src="style/images/cinammon-roll-one.png" alt="">
-            <p>Switch Roll</p>
-        </div>
-        <!-- 2 -->
-        <div class="sweet">
-            <img src="style/images/cupcake-two.png" alt="">
-            <p>Cup Cake</p>
-        </div>
-        <!-- 3 -->
-        <div class="sweet">
-            <img src="style/images/pastry-three.png" alt="">
-            <p>Pastry</p>
-        </div>
-        <!-- 4 -->
-        <div class="sweet">
-            <img src="style/images/cookies-four.png" alt="">
-            <p>Cookies</p>
-        </div>
-    </section>
-
-    <!-- ------------------------------------------------------------------------------------------------ -->
-    <!-- section three -->
-
-    <section class="services responsive-section">
-
-        <!-- 1 -->
-        <div class="service-div">
-            <div class="service-image">
-                <img src="style/images/truck-icon-1.svg" alt="">
-            </div>
-            <div class="service-content">
-                <p class="service-title">
-                    free delivery
-                </p>
-                <p class="service-text">
-                    Lorem ipsum simply dummy text the printing type setting.
-                </p>
-            </div>
-        </div>
-
-        <!-- 2 -->
-        <div class="service-div">
-            <div class="service-image">
-                <img src="style/images/time-icon-2.svg" alt="">
-            </div>
-            <div class="service-content">
-                <p class="service-title">
-                    24/07 support
-                </p>
-                <p class="service-text">
-                    Lorem ipsum simply dummy text the printing type setting.
-                </p>
-            </div>
-        </div>
-
-        <!-- 3 -->
-        <div class="service-div">
-            <div class="service-image">
-                <img src="style/images/secure-payment-icon-3.svg" alt="">
-            </div>
-            <div class="service-content">
-                <p class="service-title">
-                    secure payment
-                </p>
-                <p class="service-text">
-                    Lorem ipsum simply dummy text the printing type setting.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- -------------------------------------------------------------------------------------- -->
-    <!-- section four -->
-    <section class="products responsive-section" id="products">
-        <div class="title">
-            <p>latest products</p>
-            <h2>special bakery products</h2>
-        </div>
-        <div class="products-list">
-            <!-- --1 -->
-            <div class="item">
-                <div class="item-image">
-                    <img src="style/images/croissant-image-1.png" alt="">
-                </div>
-                <div class="item-details">
-                    <p class="item-name">croissant</p>
-                    <p class="item-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
-                </div>
-                <span class="hover-btn">
-                    <button>add to cart</button>
-                </span>
-            </div>
-            <!-- --2 -->
-            <div class="item">
-                <div class="item-image">
-                    <img id="cinnamon" src="style/images/cinnamon-roll-image-2.png" alt="">
-                </div>
-                <div class="item-details">
-                    <p class="item-name">cinnamon roll</p>
-                    <p class="item-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
-                </div>
-                <span class="hover-btn">
-                    <button>add to cart</button>
-                </span>
-            </div>
-
-            <!-- --3 -->
-            <div class="item">
-                <div class="item-image">
-                    <img id="muffin" src="style/images/blueberry-muffin-image-3.png" alt="">
-                </div>
-                <div class="item-details">
-                    <p class="item-name">blueberry muffin</p>
-                    <p class="item-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
-                </div>
-                <span class="hover-btn">
-                    <button>add to cart</button>
-                </span>
-            </div>
-
-            <!-- --4 -->
-            <div class="item">
-                <div class="item-image">
-                    <img id="pound" src="style/images/pound-cake-image-4.png" alt="">
-                </div>
-                <div class="item-details">
-                    <p class="item-name">pound cake</p>
-                    <p class="item-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
-                </div>
-                <span class="hover-btn">
-                    <button>add to cart</button>
-                </span>
-            </div>
-
-            <!-- --5 -->
-            <div class="item">
-                <div class="item-image">
-                    <img src="style/images/chocolate-chip-cookie-image-5.png" alt="">
-                </div>
-                <div class="item-details">
-                    <p class="item-name">chocolate chip cookie</p>
-                    <p class="item-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
-                </div>
-                <span class="hover-btn">
-                    <button>add to cart</button>
-                </span>
-            </div>
-
-            <!-- --6 -->
-            <div class="item">
-                <div class="item-image">
-                    <img src="style/images/danish-pastry-image-6.png" alt="">
-                </div>
-                <div class="item-details">
-                    <p class="item-name">danish pastry</p>
-                    <p class="item-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
-                </div>
-                <span class="hover-btn">
-                    <button>add to cart</button>
-                </span>
-            </div>
-
-            <!-- --7 -->
-            <div class="item">
-                <div class="item-image">
-                    <img src="style/images/chocolate-cake-image-7.png" alt="">
-                </div>
-                <div class="item-details">
-                    <p class="item-name">chocolate cake</p>
-                    <p class="item-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
-                </div>
-                <span class="hover-btn">
-                    <button>add to cart</button>
-                </span>
-            </div>
-
-            <!-- --8 -->
-            <div class="item">
-                <div class="item-image">
-                    <img src="style/images/apple-pie-image-8.png" alt="">
-                </div>
-                <div class="item-details">
-                    <p class="item-name">apple pie</p>
-                    <p class="item-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
-                </div>
-                <span class="hover-btn">
-                    <button>add to cart</button>
-                </span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ------------------------------------------------------------------------------------------------ -->
-
-    <!-- section five -->
-    <section class="offer">
-        <div class="offer-image">
-        </div>
-
-        <div class="offer-content">
-            <p>Offer For Customer. </p>
-            <h2> All Products <span>80%</span> Discount.</h2>
-            <a class="btn" href="#">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
-    </section>
-
-    <!-- ------------------------------------------------------------------------------------------------ -->
-
-    <!-- section six -->
-    <section class="blogs responsive-section" id="blogs">
-        <div class="title">
-            <p>latest blog post</p>
-            <h2>latest news & article</h2>
-        </div>
-        <div class="blogs-list">
-            <!-- 1 -->
-            <div class="blog">
-                <div class="blog-image">
-                    <img src="style/images/blog-thumbnail-image-1.jpg" alt="">
-                    <p>FEBRUARY 28, 2023</p>
-                </div>
-                <h3>Exploring the World of Bakery Items</h3>
-                <a class="btn" href="">READ MORE</a>
-            </div>
-
-            <!-- 2 -->
-            <div class="blog">
-                <div class="blog-image">
-                    <img src="style/images/blog-thumbnail-image-2.jpg" alt="">
-                    <p>FEBRUARY 28, 2023</p>
-                </div>
-                <h3>Exploring the World of Bakery Items</h3>
-                <a class="btn" href="">READ MORE</a>
-            </div>
-
-            <!--3  -->
-            <div class="blog">
-                <div class="blog-image">
-                    <img src="style/images/blog-thumbnail-image-3.jpg" alt="">
-                    <p>FEBRUARY 28, 2023</p>
-                </div>
-                <h3>Exploring the World of Bakery Items</h3>
-                <a class="btn" href="">READ MORE</a>
-            </div>
-    </section>
-    </div>
-    <!-- ------------------------------------------------------------------------------------------------ -->
-
-    <!-- section seven -->
-    <section class="footer responsive-section" id="contact">
-        <div class="title">
-            <p>book reservation</p>
-            <h2>book our reservation</h2>
-        </div>
-        <div class="form-container">
-            <form action="">
-                <input type="text" name="" id="name" placeholder="full name" class="grid-col-span">
-                <input type="number" name="" id="phone" placeholder="phone number" class="grid-col-span">
-                <input type="email" name="" id="email" placeholder="email address" class="grid-col-span">
-                <input type="text" name="" id="message" placeholder="additional message">
-                <a href="" class="btn">book reservation</a>
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn my-btn my-2 my-sm-0 d-sm-inline-block" type="submit">Book
+                    Reservation</button>
             </form>
         </div>
-    </section>
-
-    <!-- ------------------------------------------------------------------------------------------------ -->
-
-    <!-- section eight *the last section -->
-    <section class="b-f responsive-section">
-        <div class="brown-footer">
-            <!-- 1 -->
-            <div class="foot-div f-div1">
-                <div class="icon">
-                    <img src="style/images/brown-phone-icon.svg" alt="">
-                </div>
-                <div class="text">
-                    <h3>call us:</h3>
-                    <a href="">+88 (00) 569 879 845</a>
-                    <a href="">+88 (00) 569 879 845</a>
-                </div>
-            </div>
+    </nav>
+    <!-- ------------------End Navbar------------------ -->
 
 
-            <!-- 2 -->
-            <div class="foot-div">
-                <div class="icon">
-                    <img src="style/images/brown-email-icon.svg" alt="">
-                </div>
-                <div class="text">
-                    <h3>email now:</h3>
-                    <a href="">demo@yourmail.com</a>
-                    <a href="">info@yourdomain.com</a>
-                </div>
-            </div>
-            <!-- 3 -->
-            <div class="foot-div f-div3">
-                <div class="icon">
-                    <img src="style/images/brown-location-icon.svg" alt="">
-                </div>
-                <div class="text">
-                    <h3>our location:</h3>
-                    <a href="">10529 oakville rd gladstone</a>
-                    <a href="">virginia(VA), 24553</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
-    <!-- ------------------------------------------------------------------------------------------------ -->
+    <!-- ----------------------------------------------- -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="style/bootstrap/js/bootstrap.min.js"></script>
     <script src="Font Awesome/all.min.js"></script>
 
 </body>
