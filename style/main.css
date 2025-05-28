@@ -8,7 +8,7 @@
     scroll-behavior: smooth;
     list-style: none;
     text-decoration: none;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 body {
@@ -23,22 +23,23 @@ body {
     --home-bg-color: #fff5ed;
 }
 
+/* Start Navbar */
 a {
     color: var(--main-brown) !important
 }
 
-nav {
-    padding-left: 40px !important;
-    padding-right: 40px !important
-}
+/* nav {
+    padding: 20px !important;
+} */
 
 .main-nav {
-    background-color: #fff5ed;
+    /* background-color: #fff5ed; */
+    background-color: white;
 }
 
 .my-btn {
     background-color: var(--main-orange);
-    padding: 15px 40px;
+    padding: 8px 27px;
     border-radius: 40px;
     position: relative;
     top: -1px;
@@ -78,8 +79,8 @@ nav {
 }
 
 .nav-link {
-    font-weight: 600;
-    font-size: 19px;
+    font-weight: 550;
+    font-size: 17px;
     margin-right: 10px;
 }
 
@@ -102,3 +103,77 @@ nav {
 .navbar-brand span:last-child {
     color: var(--main-orange);
 }
+
+/* End Navbar */
+
+/* Start Slider Section */
+.slider {
+    /* background-color: var(--home-bg-color); */
+    width: 100%;
+}
+
+.slider .slider-bg {
+    background-image: url(images/hero-bg-pattern.png);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-item {
+    height: 100%;
+    /* Fill parent height */
+    background-size: cover;
+    /* Make background image cover the area */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Prevent tiling */
+}
+
+.carousel-1 {
+    background-image: url(images/Slider-images/Slider-1.png);
+    background-position: bottom;
+}
+
+.carousel-2 {
+    background-image: url(images/Slider-images/Slider-2.png);
+
+}
+
+.carousel-3 {
+    background-image: url(images/Slider-images/Slider-3.png);
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: white; */
+    background: color-mix(in srgb, #383838, transparent 15%);
+    /* backdrop-filter: blur(5px); */
+    top: 0;
+    left: 0;
+    /* opacity: 0.5; */
+    z-index: 1;
+}
+
+.carousel-caption {
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+    /* backdrop-filter: blur(2px); */
+}
+.carousel-caption h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+.carousel-caption p {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* End Slider Section */
