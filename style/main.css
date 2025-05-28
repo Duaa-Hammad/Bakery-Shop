@@ -184,43 +184,70 @@ a {
 
 /* Start Cards Section */
 
-.cards {
+h2{
+    color: var(--main-brown);
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.5rem;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.main-container {
     background-color: var(--home-bg-color);
 }
 
-.cards .card {
-    width: 100%;
-    max-width: 350px;
-    height: 350px;
-    margin: 20px 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    align-items: center;
-    justify-content: center;
+.card .card-image {
+    width: 170px;
+    height: 170px;
 }
 
-.card,
-.card-details {
+.card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-container {
+    padding: 10px;
+    /* background-color: red; */
+}
+
+.inner-card {
+    padding: 20px;
+    height: 350px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    /* or space-between */
+    align-items: center;
+
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(73, 45, 19, .04) !important;
+    transition: .5s;
 }
 
 .card-details {
+    flex-grow: 1;
+    /* This will take up all available space */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
 }
 
-.card-details p:first-child {
-    font-size: 1.5rem;
-    font-weight: 500;
+.cart-btn {
+    margin-top: auto;
+    /* Pushes the button to the bottom */
 }
 
-.cards .card img {
-    width: 170px;
+.card-details p {
+    font-weight: 550;
 }
-.card .card-details .cart-btn {
-    padding: 10px;
-    transition: 0.5s;
+
+.card-details .card-name {
+    font-size: 1.2rem;
+    color: var(--main-brown);
 }
+
 /* End Cards Section */
