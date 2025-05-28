@@ -31,33 +31,33 @@
         <!-- End toggle button -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
+                <li class="nav-card active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-card">
                     <a class="nav-link" href="#">About</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-card">
                     <a class="nav-link" href="#">Products</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-card">
                     <a class="nav-link" href="#">Blogs</a>
                 </li>
                 <!-- Start Dropdown List -->
-                <li class="nav-item dropdown">
+                <li class="nav-card dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                         aria-expanded="false">
                         Dropdown
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-card" href="#">Action</a>
+                        <a class="dropdown-card" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-card" href="#">Something else here</a>
                     </div>
                 </li>
                 <!-- End Dropdown List -->
-                <li class="nav-item">
+                <li class="nav-card">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
             </ul>
@@ -75,7 +75,7 @@
     <!-- ------------------Start Slider------------------ -->
     <div class="slider">
         <div class="slider-bg">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div id="carousel-Controls" class="carousel slide" data-ride="carousel">
                 <div class="layer"></div>
                 <div class="carousel-inner">
                     <div class="carousel-item active carousel-1">
@@ -93,6 +93,7 @@
                         </div>
                     </div>
                     <div class="carousel-item carousel-3">
+
                         <div class="carousel-caption d-none d-md-block">
                             <h1>Welcome to Our Bakery</h1>
                             <p>Where Every Bite Tells a Sweet Story</p>
@@ -100,13 +101,11 @@
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
-                    data-slide="prev">
+                <button class="carousel-control-prev" type="button" data-target="#carousel-Controls" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-target="#carouselExampleControls"
-                    data-slide="next">
+                <button class="carousel-control-next" type="button" data-target="#carousel-Controls" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </button>
@@ -115,7 +114,118 @@
     </div>
     <!-- ------------------End Slider------------------ -->
 
+    <!-- ------------------Start Cards------------------ -->
+    <div class="cards container-fluid">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- --1 -->
+                <div class="card col-12 col-sm-6 col-md-3">
+                    <div class="card-image">
+                        <img src="style/images/croissant-image-1.png" alt="">
+                    </div>
 
+                    <div class="card-details">
+                        <p class="card-name">croissant</p>
+                        <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                        <button class="btn btn-success cart-btn">add to cart</button>
+                    </div>
+                </div>
+                <!-- --2 -->
+                <div class="card col-12 col-sm-6 col-md-3">
+                    <div class="card-image">
+                        <img id="cinnamon" src="style/images/cinnamon-roll-image-2.png" alt="">
+                    </div>
+
+                    <div class="card-details">
+                        <p class="card-name">cinnamon roll</p>
+                        <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                        <button class="btn btn-success cart-btn">add to cart</button>
+                    </div>
+                </div>
+
+                <!-- --3 -->
+                <div class="card col-12 col-sm-6 col-md-3">
+                    <div class="card-image">
+                        <img id="muffin" src="style/images/blueberry-muffin-image-3.png" alt="">
+                    </div>
+
+                    <div class="card-details">
+                        <p class="card-name">blueberry muffin</p>
+                        <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                        <button class="btn btn-success cart-btn">add to cart</button>
+                    </div>
+                </div>
+
+                <!-- --4 -->
+                <div class="card col-12 col-sm-6 col-md-3">
+                    <div class="card-image">
+                        <img id="pound" src="style/images/pound-cake-image-4.png" alt="">
+                    </div>
+
+                    <div class="card-details">
+                        <p class="card-name">pound cake</p>
+                        <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                        <button class="btn btn-success cart-btn">add to cart</button>
+                    </div>
+                </div>
+
+                <!-- --5 -->
+                <div class="card col-12 col-sm-6 col-md-3">
+                    <div class="card-image">
+                        <img src="style/images/chocolate-chip-cookie-image-5.png" alt="">
+                    </div>
+
+                    <div class="card-details">
+                        <p class="card-name">chocolate chip cookie</p>
+                        <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                        <button class="btn btn-success cart-btn">add to cart</button>
+                    </div>
+                </div>
+
+                <!-- --6 -->
+                <div class="card col-12 col-sm-6 col-md-3">
+                    <div class="card-image">
+                        <img src="style/images/danish-pastry-image-6.png" alt="">
+                    </div>
+                    <br />
+                    <div class="card-details">
+                        <p class="card-name">danish pastry</p>
+                        <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                        <button class="btn btn-success cart-btn">add to cart</button>
+                    </div>
+                </div>
+
+                <!-- --7 -->
+                <div class="card col-12 col-sm-6 col-md-3">
+                    <div class="card-image">
+                        <img src="style/images/chocolate-cake-image-7.png" alt="">
+                    </div>
+
+                    <div class="card-details">
+                        <p class="card-name">chocolate cake</p>
+                        <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                        <button class="btn btn-success cart-btn">add to cart</button>
+                    </div>
+                </div>
+
+                <!-- --8 -->
+                <div class="card col-12 col-sm-6 col-md-3">
+                    <div class="card-image">
+                        <img src="style/images/apple-pie-image-8.png" alt="">
+                    </div>
+
+                    <div class="card-details">
+                        <p class="card-name">apple pie</p>
+                        <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                        <button class="btn btn-success cart-btn">add to cart</button>
+                    </div>
+                </div>
+                <!-- ------------------------------ -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ------------------End Cards------------------ -->
 
 
     <!-- ----------------------------------------------- -->
