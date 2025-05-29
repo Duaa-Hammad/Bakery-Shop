@@ -29,7 +29,11 @@ a {
 }
 
 /* nav {
-    padding: 20px !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 111111111111;
 } */
 
 .main-nav {
@@ -65,22 +69,28 @@ a {
 .cart-icon {
     width: 50px;
     height: 50px;
-    border: 2px dashed var(--home-bg-color);
     border-radius: 50px;
-    padding: 1px;
-    margin-right: 10px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(73, 45, 19, 0.15);
+    background: var(--main-orange, #f29c52);
+    /* default background */
+    transition: 0.5s;
 }
 
-.cart-icon>img {
-    position: relative;
-    top: 9px;
-    left: 12px;
-    width: 20px;
+.cart-icon:hover,
+.cart-icon:focus {
+    background: var(--main-brown);
+    color: white;
 }
 
 .nav-link {
     font-weight: 550;
-    font-size: 17px;
+    font-size: 20px;
     margin-right: 10px;
 }
 
@@ -179,12 +189,10 @@ a {
     font-weight: 500;
     text-transform: none;
 }
-
 /* End Slider Section */
 
 /* Start Cards Section */
-
-h2{
+h2 {
     color: var(--main-brown);
     text-align: center;
     font-weight: 600;
@@ -192,6 +200,7 @@ h2{
     padding-top: 30px;
     padding-bottom: 20px;
 }
+
 .main-container {
     background-color: var(--home-bg-color);
 }
@@ -222,7 +231,7 @@ h2{
     align-items: center;
 
     border-radius: 15px;
-    box-shadow: 0 10px 15px rgba(73, 45, 19, .04) !important;
+    box-shadow: 0 10px 15px rgba(73, 45, 19, .04);
     transition: .5s;
 }
 
@@ -251,3 +260,26 @@ h2{
 }
 
 /* End Cards Section */
+
+/* Start Cart Drawer */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart-drawer.open {
+    transform: translateX(0);
+}
+
+#cartItems img {
+    width: 50px;
+}
+/* End Cart Drawer */
