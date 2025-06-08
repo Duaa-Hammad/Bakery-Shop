@@ -28,6 +28,10 @@ a {
     color: var(--main-brown) !important
 }
 
+a:hover {
+    text-decoration: none !important;
+}
+
 /* nav {
     position: fixed !important;
     top: 0;
@@ -56,6 +60,11 @@ a {
 .my-btn:hover {
     background-color: var(--main-brown);
     color: white;
+}
+
+.my-btn:hover a {
+    color: white !important;
+    transition: .5s;
 }
 
 .my-btn:active {
@@ -122,13 +131,6 @@ a {
     width: 100%;
 }
 
-.slider .slider-bg {
-    background-image: url(images/hero-bg-pattern.png);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .carousel-item {
     height: 100%;
     /* Fill parent height */
@@ -189,10 +191,11 @@ a {
     font-weight: 500;
     text-transform: none;
 }
+
 /* End Slider Section */
 
 /* Start Cards Section */
-h2 {
+.section-head {
     color: var(--main-brown);
     text-align: center;
     font-weight: 600;
@@ -203,6 +206,8 @@ h2 {
 
 .main-container {
     background-color: var(--home-bg-color);
+    background-image: url(images/hero-bg-pattern.png);
+    object-fit: cover;
 }
 
 .card .card-image {
@@ -282,4 +287,5 @@ h2 {
 #cartItems img {
     width: 50px;
 }
+
 /* End Cart Drawer */
