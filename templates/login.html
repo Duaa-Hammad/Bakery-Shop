@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css bootstrap file -->
-    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <!-- Font Awesome css file -->
-    <link rel="stylesheet" href="Font Awesome/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Font Awesome/all.min.css') }}">
     <!-- Outfit Font -->
-    <link rel="stylesheet" href="Fonts/Outfit.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Fonts/Outfit.css') }}">
     <!-- my css file -->
-    <link rel="stylesheet" href="style/auth.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
     <!-- Website icon -->
-    <link rel="website icon" href="style/images/cupcake-two.png">
+    <link rel="website icon" href="{{ url_for('static', filename='images/cupcake-two.png') }}">
     <title>Login</title>
 </head>
 
