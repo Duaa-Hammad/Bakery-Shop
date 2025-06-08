@@ -47,11 +47,17 @@
             <button class="cart-icon">
                 <i class="fa-solid fa-cart-shopping"></i>
             </button>
+            {# Start Jinja2 Syntax #}
+            {% if username != None %}
             <div class="my-2 my-lg-0">
-                <button class="btn my-btn my-2 my-sm-0 d-sm-inline-block">
-                    <a href="sign_up.html" class="auth">Sign Up Now</a>
-                </button>
+                <a href="#" class="auth btn my-btn my-2 my-sm-0 d-sm-inline-block">{{ sentence }}</a>
             </div>
+            {% else %}
+                <div class="my-2 my-lg-0">
+                    <a href="{{ url_for('sign_up') }}" class="auth btn my-btn my-2 my-sm-0 d-sm-inline-block">{{ sentence }}</a>
+                </div>
+            {% endif %}
+            {# End Jinja2 Syntax #}
         </div>
     </nav>
     <!-- ------------------End Navbar------------------ -->
@@ -106,7 +112,7 @@
                 <div class="card-container col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card inner-card">
                         <div class="card-image">
-                            <img src="static/images/croissant-image-1.png" alt="">
+                            <img src="../static/images/croissant-image-1.png" alt="">
                         </div>
                         <div class="card-details">
                             <p class="card-name">croissant</p>
@@ -119,7 +125,7 @@
                 <div class="card-container col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card inner-card">
                         <div class="card-image">
-                            <img id="cinnamon" src="static/images/cinnamon-roll-image-2.png" alt="">
+                            <img id="cinnamon" src="../static/images/cinnamon-roll-image-2.png" alt="">
                         </div>
                         <div class="card-details">
                             <p class="card-name">cinnamon roll</p>
@@ -133,7 +139,7 @@
                 <div class="card-container col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card inner-card">
                         <div class="card-image">
-                            <img id="muffin" src="static/images/blueberry-muffin-image-3.png" alt="">
+                            <img id="muffin" src="../static/images/blueberry-muffin-image-3.png" alt="">
                         </div>
                         <div class="card-details">
                             <p class="card-name">blueberry muffin</p>
@@ -147,7 +153,7 @@
                 <div class="card-container col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card inner-card">
                         <div class="card-image">
-                            <img id="pound" src="static/images/pound-cake-image-4.png" alt="">
+                            <img id="pound" src="../static/images/pound-cake-image-4.png" alt="">
                         </div>
                         <div class="card-details">
                             <p class="card-name">pound cake</p>
@@ -161,7 +167,7 @@
                 <div class="card-container col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card inner-card">
                         <div class="card-image">
-                            <img src="static/images/chocolate-chip-cookie-image-5.png" alt="">
+                            <img src="../static/images/chocolate-chip-cookie-image-5.png" alt="">
                         </div>
                         <div class="card-details">
                             <p class="card-name">chocolate chip cookie</p>
@@ -175,7 +181,7 @@
                 <div class="card-container col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card inner-card">
                         <div class="card-image">
-                            <img src="static/images/danish-pastry-image-6.png" alt="">
+                            <img src="../static/images/danish-pastry-image-6.png" alt="">
                         </div>
                         <div class="card-details">
                             <p class="card-name">danish pastry</p>
@@ -189,7 +195,7 @@
                 <div class="card-container col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card inner-card">
                         <div class="card-image">
-                            <img src="static/images/chocolate-cake-image-7.png" alt="">
+                            <img src="../static/images/chocolate-cake-image-7.png" alt="">
                         </div>
                         <div class="card-details">
                             <p class="card-name">chocolate cake</p>
@@ -203,7 +209,7 @@
                 <div class="card-container col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card inner-card">
                         <div class="card-image">
-                            <img src="static/images/apple-pie-image-8.png" alt="">
+                            <img src="../static/images/apple-pie-image-8.png" alt="">
                         </div>
                         <div class="card-details">
                             <p class="card-name">apple pie</p>
@@ -230,7 +236,7 @@
         <div id="cartItems">
             <!-- Products -->
             <div class="d-flex align-items-center mb-3">
-                <img src="static/images/blueberry-muffin-image-3.png" class="rounded" alt="blueberry-muffin">
+                <img src="../../static/images/blueberry-muffin-image-3.png" class="rounded" alt="blueberry-muffin">
                 <div class="ml-2">
                     <strong>Blueberry Muffin</strong>
                     <p class="text-muted mb-0">$2.00 USD</p>

@@ -23,11 +23,17 @@
             <div class="col-md-6 bg-white p-4 rounded shadow mt-5">
                 <h2 class="mb-4 font-weight-bold text-center">Login</h2>
 
-                <form id="sign-up-form" action="/signUp" method="post">
+                <form id="sign-up-form" action="/login" method="post">
+                    {#
                     <div class="form-group mb-3">
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" id="email" name="email"
                             placeholder="Enter your email.." />
+                    </div>
+#}
+                    <div class="form-group mb-3">
+                        <label for="name">Username:</label>
+                        <input type="text" class="form-control" id="name" name="username" placeholder="Enter your username.." />
                     </div>
 
                     <div class="form-group mb-3">

@@ -23,10 +23,10 @@
             <div class="col-md-6 bg-white p-4 rounded shadow">
                 <h2 class="mb-4 font-weight-bold text-center">Sign Up</h2>
 
-                <form id="sign-up-form" action="/signUp" method="post">
+                <form id="sign-up-form" action="/login" method="post">
                     <div class="form-group mb-3">
-                        <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name.." />
+                        <label for="name">Username:</label>
+                        <input type="text" class="form-control" id="name" name="username" placeholder="Enter your name.." />
                     </div>
 
                     <div class="form-group mb-3">
@@ -67,7 +67,7 @@
                         <button type="submit" class="btn btn-primary">Signup</button>
                         <button type="reset" class="btn btn-secondary">Reset</button>
                         <div class="mb-4"></div>
-                        <a href="login.html">Already have an Account?</a>
+                        <a href="/login">Already have an Account?</a>
 
                         <!-- <button class="btn btn-success">
                             <a href="login.html">Login</a>

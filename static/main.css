@@ -59,12 +59,7 @@ a:hover {
 
 .my-btn:hover {
     background-color: var(--main-brown);
-    color: white;
-}
-
-.my-btn:hover a {
     color: white !important;
-    transition: .5s;
 }
 
 .my-btn:active {
