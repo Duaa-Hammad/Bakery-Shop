@@ -7,11 +7,10 @@ app = Flask(__name__)
 def home():
     return render_template("index.html", sentence = "Sign Up Now", username = None)
 
-
+# /index/duaahammad
 @app.route("/index/<username>")
 def index(username):
     return render_template("index.html", sentence=username)
-
 
 @app.route("/sign_up")
 def sign_up():
