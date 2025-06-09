@@ -31,4 +31,12 @@ def login():
         session["username"] = request.form["username"]
         session["password"] = request.form["password"]
         return redirect(url_for("index"))
+    
+@app.route("/logout")
+def logout():
+    # remove the username and password from the session
+    session.pop("username", None)
+    session.pop("password", None)
+    return redirect(url_for("index"))
+
 app.run(debug=True)

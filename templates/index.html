@@ -71,14 +71,14 @@
                         <div class="carousel-caption d-none d-md-block">
                             <h1>Welcome to Our Bakery</h1>
                             <p>Fresh from Our Oven to Your Heart</p>
-                            <button class="btn my-btn">Shop Now</button>
+                            <a class="btn my-btn" href="#products">Shop Now</a>
                         </div>
                     </div>
                     <div class="carousel-item carousel-2">
                         <div class="carousel-caption d-none d-md-block">
                             <h1>Welcome to Our Bakery</h1>
                             <p>Baked with Love, Served with a Smile</p>
-                            <button class="btn my-btn">Shop Now</button>
+                            <a class="btn my-btn" href="#products">Shop Now</a>
                         </div>
                     </div>
                     <div class="carousel-item carousel-3">
@@ -86,7 +86,7 @@
                         <div class="carousel-caption d-none d-md-block">
                             <h1>Welcome to Our Bakery</h1>
                             <p>Where Every Bite Tells a Sweet Story</p>
-                            <button class="btn my-btn">Shop Now</button>
+                            <a class="btn my-btn" href="#products">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
 
     <!-- ------------------Start Cards------------------ -->
     <div class="main-container container-fluid">
-        <h2 class="section-head">Our Products</h2>
+        <h2 class="section-head" id="products">Our Products</h2>
         <div class="cards container text-center">
             <div class="row">
                 <!-- --1 -->
@@ -117,8 +117,8 @@
                         <div class="card-details">
                             <p class="card-name">croissant</p>
                             <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                            <button class="btn my-btn cart-btn" type="submit">add to cart</button>
                         </div>
-                        <button class="btn my-btn cart-btn" data-id="1">add to cart</button>
                     </div>
                 </div>
                 <!-- --2 -->
@@ -130,8 +130,8 @@
                         <div class="card-details">
                             <p class="card-name">cinnamon roll</p>
                             <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                            <button class="btn my-btn cart-btn" type="submit">add to cart</button>
                         </div>
-                        <button class="btn my-btn cart-btn" data-id="2">add to cart</button>
                     </div>
                 </div>
 
@@ -144,8 +144,8 @@
                         <div class="card-details">
                             <p class="card-name">blueberry muffin</p>
                             <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                            <button class="btn my-btn cart-btn" type="submit">add to cart</button>
                         </div>
-                        <button class="btn my-btn cart-btn" data-id="3">add to cart</button>
                     </div>
                 </div>
 
@@ -158,8 +158,8 @@
                         <div class="card-details">
                             <p class="card-name">pound cake</p>
                             <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                            <button class="btn my-btn cart-btn" type="submit">add to cart</button>
                         </div>
-                        <button class="btn my-btn cart-btn" data-id="4">add to cart</button>
                     </div>
                 </div>
 
@@ -172,8 +172,8 @@
                         <div class="card-details">
                             <p class="card-name">chocolate chip cookie</p>
                             <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                            <button class="btn my-btn cart-btn" type="submit">add to cart</button>
                         </div>
-                        <button class="btn my-btn cart-btn" data-id="5">add to cart</button>
                     </div>
                 </div>
 
@@ -186,8 +186,8 @@
                         <div class="card-details">
                             <p class="card-name">danish pastry</p>
                             <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                            <button class="btn my-btn cart-btn" type="submit">add to cart</button>
                         </div>
-                        <button class="btn my-btn cart-btn" data-id="6">add to cart</button>
                     </div>
                 </div>
 
@@ -200,8 +200,8 @@
                         <div class="card-details">
                             <p class="card-name">chocolate cake</p>
                             <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
+                            <button class="btn my-btn cart-btn" type="submit">add to cart</button>
                         </div>
-                        <button class="btn my-btn cart-btn" data-id="7">add to cart</button>
                     </div>
                 </div>
 
@@ -215,7 +215,7 @@
                             <p class="card-name">apple pie</p>
                             <p class="card-price"><span>$ 2.00 USD</span> $ 2.00 USD</p>
                         </div>
-                        <button class="btn my-btn cart-btn" data-id="8">add to cart</button>
+                        <button class="btn my-btn cart-btn" type="submit">add to cart</button>
                     </div>
                 </div>
                 <!-- ------------------------------ -->
@@ -236,7 +236,7 @@
         <div id="cartItems">
             <!-- Products -->
             <div class="d-flex align-items-center mb-3">
-                <img src="../../static/images/blueberry-muffin-image-3.png" class="rounded" alt="blueberry-muffin">
+                <img src="../static/images/blueberry-muffin-image-3.png" class="rounded" alt="blueberry-muffin">
                 <div class="ml-2">
                     <strong>Blueberry Muffin</strong>
                     <p class="text-muted mb-0">$2.00 USD</p>
@@ -255,7 +255,7 @@
     <!-- ------------------End Cart Drawer------------------ -->
 
 
-
+    
     <!-- ----------------------------------------------- -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
