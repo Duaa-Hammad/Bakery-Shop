@@ -12,10 +12,6 @@ $(function () {
   // To show the cart drawer when the cart icon is clicked
   $(".cart-icon").on("click", function (e) {
     e.preventDefault();
-    // Optionally, load cart content via AJAX here
-    // $.get('cart-content-url', function(data) {
-    //     $('#cartItems').html(data);
-    // });
     $("#cartDrawer").addClass("open");
   });
 
