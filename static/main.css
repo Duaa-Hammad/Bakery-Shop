@@ -8,7 +8,7 @@
     scroll-behavior: smooth;
     list-style: none;
     text-decoration: none;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 body {
@@ -41,8 +41,13 @@ a:hover {
 } */
 
 .main-nav {
-    /* background-color: #fff5ed; */
-    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030; /* رقم عالي لأنه الـ navbar مهم */
+    background-color: white; /* لو الخلفية شفافة رح تلاقي المشكلة */
+    margin-bottom: 60px;
 }
 
 .my-btn {
@@ -270,7 +275,7 @@ a:hover {
     height: 100%;
     background-color: white;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 20000;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
 }

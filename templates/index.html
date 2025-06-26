@@ -1,67 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bakery Shop</title>
-    <!-- css bootstrap file -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-    <!-- Font Awesome css file -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='Font Awesome/all.min.css') }}">
-    <!-- Outfit Font -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='Fonts/Outfit.css') }}">
-    <!-- my css file -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-    <!-- Website icon -->
-    <link rel="website icon" href="{{ url_for('static', filename='images/cupcake-two.png') }}">
-</head>
-
-<body>
-    <!-- ------------------Start Navbar------------------ -->
-    <nav class="navbar navbar-expand-lg navbar-light main-nav">
-        <a class="navbar-brand" href="#">
-            <span>Bak</span><span>Ery</span>
-        </a>
-        <!-- Start toggle button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- End toggle button -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-card active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-card">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-card">
-                    <a class="nav-link" href="#">Products</a>
-                </li>
-                <li class="nav-card">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-            <button class="cart-icon">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </button>
-            {# Start Jinja2 Syntax #}
-            {% if username != None %}
-            <div class="my-2 my-lg-0">
-                <a href="#" class="auth btn my-btn my-2 my-sm-0 d-sm-inline-block">{{ sentence }}</a>
-            </div>
-            {% else %}
-                <div class="my-2 my-lg-0">
-                    <a href="{{ url_for('sign_up') }}" class="auth btn my-btn my-2 my-sm-0 d-sm-inline-block">{{ sentence }}</a>
-                </div>
-            {% endif %}
-            {# End Jinja2 Syntax #}
-        </div>
-    </nav>
-    <!-- ------------------End Navbar------------------ -->
+<!-- templates/home.html -->
+{% extends "layout.html" %}
     <!-- ------------------Start Slider------------------ -->
+    {% block content %}
     <div class="slider">
         <div class="slider-bg">
             <div id="carousel-Controls" class="carousel slide" data-ride="carousel">
@@ -222,46 +162,4 @@
         </div>
     </div>
     <!-- ------------------End Cards------------------ -->
-
-    <!-- ------------------Start Cart Drawer------------------ -->
-    <div id="cartDrawer" class="cart-drawer bg-white shadow p-3">
-        <div class="d-flex justify-content-between align-items-center">
-            <h5>Your Cart</h5>
-            <button onclick="closeCart()" class="btn btn-sm btn-secondary">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-        <hr>
-        <div id="cartItems">
-            <!-- Products -->
-            <div class="d-flex align-items-center mb-3">
-                <img src="../static/images/blueberry-muffin-image-3.png" class="rounded" alt="blueberry-muffin">
-                <div class="ml-2">
-                    <strong>Blueberry Muffin</strong>
-                    <p class="text-muted mb-0">$2.00 USD</p>
-                    <button class="btn btn-sm btn-danger">Remove</button>
-                </div>
-                <input type="number" value="1" class="form-control form-control-sm ml-auto" style="width: 60px;">
-            </div>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between">
-            <strong>Subtotal</strong>
-            <strong>$2.00 USD</strong>
-        </div>
-        <button class="btn btn-warning btn-block mt-3">Continue to Checkout</button>
-    </div>
-    <!-- ------------------End Cart Drawer------------------ -->
-
-
-
-    <!-- ----------------------------------------------- -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='Font Awesome/all.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='main.js') }}"></script>
-
-</body>
-
-</html>
+    {% endblock %}

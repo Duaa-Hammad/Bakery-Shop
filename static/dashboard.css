@@ -1,0 +1,55 @@
+:root {
+    --yellow: #fcd978;
+    --main-orange: #f29c52;
+    --main-brown: #492d13;
+    --link-color: #493d13;
+    --home-bg-color: #fff5ed;
+}
+.dashboard-page body {
+    min-height: 100vh;
+    display: flex;
+    overflow-x: hidden;
+}
+
+/* sidebar */
+.dashboard-page .sidebar {
+    position: fixed;
+    top: 60px; /* according to the navbar height */
+    left: 0;
+    height: calc(100vh - 60px); /* so it doesn't cover the navbar */
+    width: 250px;
+    /* background-color: #1a71c7; */
+    background-color: var(--home-bg-color);
+    z-index: 1020; /* less than the navbar */
+    padding-top: 20px; /* if you like */
+}
+
+.dashboard-page .sidebar a {
+    color: var(--main-brown) !important;
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+}
+.sidebar h4{
+    color: var(--main-brown) !important;
+}
+.dashboard-page .sidebar a:hover,
+.dashboard-page .sidebar a.active {
+    background-color: #f2d9c5;
+    color: var(--main-brown);
+}
+
+.dashboard-page .content {
+    margin-top: 60px;
+    margin-left: 250px; /* for the space next to the sidebar */
+    padding: 40px;
+    width: calc(100% - 250px); /* make sure the width doesn't exceed the window */
+    overflow-y: auto; /* allow vertical scrolling if content is long */
+    background-color: purple;
+}
+
+nav{
+    background-color: var(--home-bg-color) !important;
+}

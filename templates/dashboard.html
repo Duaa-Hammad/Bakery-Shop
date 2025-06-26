@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-page">
+    <div class="sidebar text-center">
+        <h4 class="text-center text-light">Admin Panel</h4>
+        <a href="{{ url_for('dashboard') }}" class="active">Dashboard</a>
+        <a href="{{ url_for('index') }}">Main Website</a>
+        <a href="#">Manage Users</a>
+        <a href="#">Manage Products</a>
+        <a href="#">View Orders</a>
+    </div>
+
+    <div class="content">
+        <h2>Welcome, Admin</h2>
+        <p>This is the main content of your admin dashboard. You can add charts, stats, tables, etc.</p>
+    </div>
+</div>
+{% endblock %}
