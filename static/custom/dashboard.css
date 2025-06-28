@@ -65,3 +65,11 @@ nav{
 .logout-text {
     color: red !important;
 }
+
+/* Add this to static/custom/dashboard.css */
+.content {
+    margin-left: 250px; /* Same as sidebar width */
+    padding: 40px;
+    width: calc(100% - 250px);
+    overflow-y: auto;
+}

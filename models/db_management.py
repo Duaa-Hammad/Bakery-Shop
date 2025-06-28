@@ -1,8 +1,13 @@
 import sqlite3
 
+def get_db():
+    db = sqlite3.connect("models/shop.db")
+    db.row_factory = sqlite3.Row  # <--returns rows as sqlite3.Row objects (which act like both tuples and dicts)
+    return db
 
 def connect_db():
-    conn = sqlite3.connect("models/shop.db")
+    conn = get_db()  # This function is defined in the same file, models/db_management.py
+    
     # Think of the cursor as your "messenger" that communicates with the database.
     cursor = conn.cursor()
     # Table 1: users_info
@@ -23,7 +28,6 @@ def connect_db():
         id INTEGER PRIMARY KEY AUTOINCREMENT, 
         name TEXT, 
         price REAL, 
-        description TEXT, 
         image_url TEXT
     )"""
     )
@@ -42,13 +46,6 @@ def connect_db():
     conn.commit()  # Save the changes
     return conn
 
-
-def get_db():
-    db = sqlite3.connect("models/shop.db")
-    db.row_factory = sqlite3.Row  # <--returns rows as sqlite3.Row objects (which act like both tuples and dicts)
-    return db
-
-
 def add_user(data):
     db = get_db()
     cur = db.cursor()
@@ -57,8 +54,7 @@ def add_user(data):
     password = data.get("password")
     gender = data.get("gender")
     city = data.get("city")
-    admin_email = "duaa@gmail.com"
-    role = "admin" if email == admin_email else "user"
+    role = data.get("role")
     user_data = [name, email, password, gender, city, role]
     cur.execute(
         "INSERT INTO users_info (name, email, password, gender, city, role) VALUES (?, ?, ?, ?, ?, ?)",
@@ -75,19 +71,84 @@ def get_user_by_email(email):
     db.close()
     return user
 
+def get_all_users():
+    db = get_db()
+    cur = db.cursor()
+    users = cur.execute("SELECT * FROM users_info").fetchall()
+    db.close()
+    return users
 
-def add_product(name, price, description, image_url, conn):
-    cursor = conn.cursor()
-    cursor.execute(
-        "INSERT INTO products (name, price, description, image_url) VALUES (?, ?, ?, ?)",
-        (name, price, description, image_url),
+def delete_user(user_id):
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("DELETE FROM users_info WHERE id = ?", (user_id,))
+    db.commit()
+    db.close()
+# --------------------------------------------------------------------------------------
+
+def add_product(data):
+    db = get_db()
+    cur = db.cursor()
+    name = data.get("name")
+    price = data.get("price")
+    image_url = data.get("image")
+    cur.execute(
+        "INSERT INTO products (name, price, image_url) VALUES (?, ?, ?)",
+        (name, price, image_url),
     )
-    conn.commit()
-    conn.close()
+    db.commit()
+    db.close()
 
+def delete_product(product_id):
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("DELETE FROM products WHERE id = ?", (product_id,))
+    db.commit()
+    db.close()
 
-def get_all_products(conn):
-    cursor = conn.cursor()
-    products = cursor.execute("SELECT * FROM products").fetchall()
-    conn.close()
+def get_product_by_id(product_id):
+    db = get_db()
+    cur = db.cursor()
+    product = cur.execute("SELECT * FROM products WHERE id = ?", (product_id,)).fetchone()
+    db.close()
+    return product
+
+def get_all_products():
+    db = get_db()
+    cur = db.cursor()
+    products = cur.execute("SELECT * FROM products").fetchall()
+    db.close()
     return products
+# ------------------------------------------------------------------------
+def add_to_cart(product_id, user_id):
+    db = get_db()
+    cur = db.cursor()
+    quantity = 1  # Default quantity for simplicity
+    cur.execute(
+        "INSERT INTO cart (user_id, product_id, quantity) VALUES (?, ?, ?)",
+        (user_id, product_id, quantity),
+    )
+    db.commit()
+    db.close()
+    
+    
+def get_cart_items(user_id):
+    db = get_db()
+    cur = db.cursor()
+    cart_items = cur.execute(
+        """SELECT c.id, p.name, p.price, c.quantity, p.image_url
+        FROM cart c 
+        JOIN products p ON c.product_id = p.id 
+        WHERE c.user_id = ?""",
+        (user_id,)
+    ).fetchall()
+    db.close()
+    return cart_items
+
+def delete_cart_item(cart_item_id):
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("DELETE FROM cart WHERE id = ?", (cart_item_id,))
+    db.commit()
+    db.close()
+

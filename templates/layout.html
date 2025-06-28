@@ -73,49 +73,25 @@
         </div>
     </nav>
     <!-- ------------------End Navbar------------------ -->
-    <div>
-        {% block content %}
 
-        {% endblock %}
-    </div>
-        <!-- ------------------Start Cart Drawer------------------ -->
-    <div id="cartDrawer" class="cart-drawer bg-white shadow p-3">
-        <div class="d-flex justify-content-between align-items-center">
-            <h5>Your Cart</h5>
-            <button onclick="closeCart()" class="btn btn-sm btn-secondary">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-        <hr>
-        <div id="cartItems">
-            <!-- Products -->
-            <div class="d-flex align-items-center mb-3">
-                <img src="../static/images/blueberry-muffin-image-3.png" class="rounded" alt="blueberry-muffin">
-                <div class="ml-2">
-                    <strong>Blueberry Muffin</strong>
-                    <p class="text-muted mb-0">$2.00 USD</p>
-                    <button class="btn btn-sm btn-danger">Remove</button>
-                </div>
-                <input type="number" value="1" class="form-control form-control-sm ml-auto" style="width: 60px;">
-            </div>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between">
-            <strong>Subtotal</strong>
-            <strong>$2.00 USD</strong>
-        </div>
-        <button class="btn btn-warning btn-block mt-3">Continue to Checkout</button>
-    </div>
-    <!-- ------------------End Cart Drawer------------------ -->
+    {% block content %}
+
+    {% endblock %}
+    
+    {% block cart_drawer %}
+    
+    {% endblock %}
+        
     <!-- ------------------Start Sidebar------------------ -->
 <div class="dashboard-page margin-top">
     <div class="sidebar text-center">
         <h4 class="text-center text-light">Admin Panel</h4>
         <a href="{{ url_for('dashboard') }}" class="active">Dashboard</a>
         <!--<a href="{{ url_for('index') }}">Main Website</a>-->
-        <a href="{{ url_for('add_user') }}">Manage Users</a>
-        <a href="{{url_for('add_product')}}">Manage Products</a>
-        <a href="#">View Orders</a>
+        <a href="{{ url_for('add_user') }}">Add User</a>
+        <a href="{{url_for('add_product')}}">Add Product</a>
+        <a href="{{url_for('view_all_users')}}">View All Users</a>
+        <a href="{{url_for('view_all_products')}}">View All Products</a>
         <a href="{{url_for('logout')}}" class="logout-text">Signout</a>
     </div>
 </div>
@@ -127,6 +103,9 @@
     <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='Font Awesome/all.min.js') }}"></script>
     <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+    {% block scripts %}
+    {% endblock %}
 </body>
 
 </html>
