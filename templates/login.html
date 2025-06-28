@@ -11,7 +11,7 @@
     <!-- Outfit Font -->
     <link rel="stylesheet" href="{{ url_for('static', filename='Fonts/Outfit.css') }}">
     <!-- my css file -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom/auth.css') }}">
     <!-- Website icon -->
     <link rel="website icon" href="{{ url_for('static', filename='images/cupcake-two.png') }}">
     <title>Login</title>
@@ -32,8 +32,8 @@
                     </div>
                     #}
                     <div class="form-group mb-3">
-                        <label for="name">Username:</label>
-                        <input type="text" class="form-control" id="name" name="username" placeholder="Enter your username.." />
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email.." />
                     </div>
 
                     <div class="form-group mb-3">
@@ -43,6 +43,9 @@
                     </div>
                     <div class="d-flex justify-content-center align-items-center">
                         <button class="btn btn-success">Login</button>
+                    </div>
+                    <div class="mb-4"></div>
+                        <a href="{{url_for('sign_up')}}">Don not have an account?</a>
                     </div>
                 </form>
             </div>

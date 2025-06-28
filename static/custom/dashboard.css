@@ -5,6 +5,13 @@
     --link-color: #493d13;
     --home-bg-color: #fff5ed;
 }
+
+body{
+    background-image: url("../images/hero-bg-pattern.png");
+    background-color: var(--home-bg-color);
+    background-position: bottom;
+    /* background-size: cover; */
+}
 .dashboard-page body {
     min-height: 100vh;
     display: flex;
@@ -19,13 +26,14 @@
     height: calc(100vh - 60px); /* so it doesn't cover the navbar */
     width: 250px;
     /* background-color: #1a71c7; */
-    background-color: var(--home-bg-color);
+    background-color: #f7eae0;
+
     z-index: 1020; /* less than the navbar */
     padding-top: 20px; /* if you like */
 }
 
 .dashboard-page .sidebar a {
-    color: var(--main-brown) !important;
+    color: var(--main-brown) ;
     display: block;
     padding: 15px 20px;
     text-decoration: none;
@@ -42,14 +50,18 @@
 }
 
 .dashboard-page .content {
-    margin-top: 60px;
     margin-left: 250px; /* for the space next to the sidebar */
     padding: 40px;
     width: calc(100% - 250px); /* make sure the width doesn't exceed the window */
     overflow-y: auto; /* allow vertical scrolling if content is long */
-    background-color: purple;
+    /* background-color: purple; */
 }
 
 nav{
-    background-color: var(--home-bg-color) !important;
+    background-color: var(--home-bg-color) ;
+    background-color: #f7eae0 !important;
+}
+
+.logout-text {
+    color: red !important;
 }

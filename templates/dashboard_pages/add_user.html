@@ -1,29 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- css bootstrap file -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-    <!-- Font Awesome css file -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='Font Awesome/all.min.css') }}">
-    <!-- Outfit Font -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='Fonts/Outfit.css') }}">
-    <!-- my css file -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='custom/auth.css') }}">
-    <!-- Website icon -->
-    <link rel="website icon" href="{{ url_for('static', filename='images/cupcake-two.png') }}">
-    <title>Sign Up</title>
-</head>
-
-<body class="bg-img">
-    <div class="container">
+{% block content %}
+<div class="container bg-img margin-top">
         <div class="row justify-content-center">
             <div class="col-md-6 bg-white p-4 rounded shadow">
-                <h2 class="mb-4 font-weight-bold text-center">Sign Up</h2>
-
-                <form id="sign-up-form" action="/sign_up" method="post">
+                <form id="sign-up-form" action="/login" method="post">
                     <div class="form-group mb-3">
                         <label for="name">Username:</label>
                         <input type="text" class="form-control" id="name" name="username" placeholder="Enter your name.." />
@@ -64,19 +45,11 @@
                     </div>
 
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Signup</button>
-                        <button type="reset" class="btn btn-secondary">Reset</button>
-                        <div class="mb-4"></div>
-                        <a href="/login">Already have an Account?</a>
-                        <!-- <button class="btn btn-success">
-                            <a href="login.html">Login</a>
-                        </button> -->
+                        <button type="submit" class="btn btn-primary">Add Admin</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
     </div>
-</body>
-
-</html>
+    {% endblock %}

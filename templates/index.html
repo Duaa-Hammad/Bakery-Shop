@@ -1,8 +1,13 @@
 <!-- templates/home.html -->
 {% extends "layout.html" %}
+
+{% block head_extra %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='custom/index.css') }}">
+{% endblock %}
+
     <!-- ------------------Start Slider------------------ -->
     {% block content %}
-    <div class="slider">
+    <div class="slider margin-top">
         <div class="slider-bg">
             <div id="carousel-Controls" class="carousel slide" data-ride="carousel">
                 <div class="layer"></div>

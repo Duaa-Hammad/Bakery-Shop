@@ -143,17 +143,17 @@ a:hover {
 }
 
 .carousel-1 {
-    background-image: url(images/Slider-images/Slider-1.png);
+    background-image: url(../images/Slider-images/Slider-1.png);
     background-position: bottom;
 }
 
 .carousel-2 {
-    background-image: url(images/Slider-images/Slider-2.png);
+    background-image: url(../images/Slider-images/Slider-2.png);
 
 }
 
 .carousel-3 {
-    background-image: url(images/Slider-images/Slider-3.png);
+    background-image: url(../images/Slider-images/Slider-3.png);
 }
 
 .layer {
@@ -289,3 +289,8 @@ a:hover {
 }
 
 /* End Cart Drawer */
+
+
+.margin-top{
+    margin-top: 100px;
+}
