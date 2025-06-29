@@ -61,7 +61,7 @@
                         <div class="card-details">
                             <p class="card-name">{{product[1]}}</p>
                             <p class="card-price">{{product[2]}} LYD</p>
-                            <form action="{{ url_for('add_to_cart', product_id=product[0]) }}" method="post">
+                            <form onsubmit="addToCart(event, {{ product[0] }})">
                                 <button class="btn my-btn cart-btn" type="submit">add to cart</button>
                             </form>
                         </div>
@@ -86,26 +86,11 @@
             </button>
         </div>
         <hr>
-            {% for cart_item in cart_items %}
             <div id="cartItems">
-                <!-- Products -->
-                <div class="d-flex align-items-center mb-3">
-                    <img src="../static/{{cart_item[4]}}" class="rounded" alt="blueberry-muffin">
-                    <div class="ml-2">
-                        <strong>{{cart_item[1]}}</strong>
-                        <p class="text-muted mb-0">{{cart_item[2]}}</p>
-                        <form action="{{ url_for('delete_cart_item', cart_item_id=cart_item[0]) }}" method="post">
-                            <button class="btn btn-sm btn-danger" type="submit">Remove</button>
-                        </form>
-                    </div>
-                </div>
+            <!--Partial Template--> 
+                {% include "_cart_items.html" %}
             </div>
-            <hr>
-            {% endfor %}
-            {% if cart_items %}
-            <button class="btn btn-warning btn-block mt-3">Continue to Checkout</button>
-            {% endif %}
-                        
+            <hr>                        
     </div>
     <!-- ------------------End Cart Drawer------------------ -->
 {% endblock %}

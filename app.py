@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from datetime import timedelta
 import os
 from werkzeug.utils import secure_filename
@@ -148,21 +148,33 @@ def delete_product(product_id):
     return redirect(url_for("view_all_products"))
 
 # -----------------------------------------------------------------------------
+# Cart management routes
+# -----------------------------------------------------------------------------
 @app.route("/add_to_cart/<int:product_id>", methods=["POST"])
 def add_to_cart(product_id):
     if "email" not in session:
-        return redirect(url_for("login"))
+        return jsonify({"error": "not logged in"}), 401
     user = db_management.get_user_by_email(session["email"])
     if user is None:
-        return redirect(url_for("login"))
+        return jsonify({"error": "not logged in"}), 401
     user_id = user["id"]
     db_management.add_to_cart(product_id, user_id)
-    return redirect(url_for("index"))
+    cart_items = db_management.get_cart_items(user_id)
+    cart_html = render_template("_cart_items.html", cart_items=cart_items)
+    return jsonify({"cart_html": cart_html})
 
 @app.route("/delete_cart_item/<int:cart_item_id>", methods=["POST"])
 def delete_cart_item(cart_item_id):
+    if "email" not in session:
+        return jsonify({"error": "not logged in"}), 401
+    user = db_management.get_user_by_email(session["email"])
+    if user is None:
+        return jsonify({"error": "not logged in"}), 401
+    user_id = user["id"]
     db_management.delete_cart_item(cart_item_id)
-    return redirect(url_for("index"))
+    cart_items = db_management.get_cart_items(user_id)
+    cart_html = render_template("_cart_items.html", cart_items=cart_items)
+    return jsonify({"cart_html": cart_html})
 
 if __name__ == "__main__":
     app.run(debug=True)

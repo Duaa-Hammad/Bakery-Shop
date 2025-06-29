@@ -1,0 +1,20 @@
+<div>
+    {% for cart_item in cart_items %}
+    <div class="d-flex align-items-center mb-3">
+        <img src="{{ url_for('static', filename=cart_item[4]) }}" class="rounded" alt="{{ cart_item[1] }}">
+        <div class="ml-2">
+            <strong>{{ cart_item[1] }}</strong>
+            <p class="text-muted mb-0">{{ cart_item[2] }} LYD</p>
+            <span class="btn btn-sm btn-primary">Qty: {{ cart_item[3] }}</span>
+            <button class="btn btn-sm btn-danger" type="button" onclick="deleteCartItem({{ cart_item[0] }})">Remove</button>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+
+{% if cart_items %}
+    <button class="btn btn-warning btn-block mt-3">Continue to Checkout</button>
+{% endif %}
+    
+
+</div>

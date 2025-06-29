@@ -123,15 +123,34 @@ def get_all_products():
 def add_to_cart(product_id, user_id):
     db = get_db()
     cur = db.cursor()
-    quantity = 1  # Default quantity for simplicity
-    cur.execute(
-        "INSERT INTO cart (user_id, product_id, quantity) VALUES (?, ?, ?)",
-        (user_id, product_id, quantity),
-    )
+    product = get_cart_item_by_product_id(user_id, product_id)
+    if product:
+        # If the product is already in the cart, increment the quantity
+        new_quantity = product["quantity"] + 1
+        cur.execute(
+            "UPDATE cart SET quantity = ? WHERE user_id = ? AND product_id = ?",
+            (new_quantity, user_id, product_id),
+        )
+    else:
+        quantity = 1  # Default quantity for simplicity
+        cur.execute(
+            "INSERT INTO cart (user_id, product_id, quantity) VALUES (?, ?, ?)",
+            (user_id, product_id, quantity),
+        )
     db.commit()
     db.close()
     
-    
+def get_cart_item_by_product_id(user_id, product_id):
+    db = get_db()
+    cur = db.cursor()
+    cart_item = cur.execute(
+        """SELECT * FROM cart WHERE user_id = ? AND product_id = ?""",
+        (user_id, product_id)
+    ).fetchone()
+    db.close()
+    return cart_item
+
+
 def get_cart_items(user_id):
     db = get_db()
     cur = db.cursor()
