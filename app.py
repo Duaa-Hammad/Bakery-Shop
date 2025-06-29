@@ -63,6 +63,8 @@ def logout():
     # remove the username and password from the session
     session.pop("username", None)
     session.pop("password", None)
+    session.pop("email", None)
+    session.pop("role", None)
     return redirect(url_for("index"))
 
 
