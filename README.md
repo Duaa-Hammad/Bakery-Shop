@@ -1,4 +1,5 @@
 ## Bakery Shop Website using Flask, Python
-- Created using  Bootstrap 4 for responsiveness, and Jquery
+- Frontend: HTML, CSS, JQuery and Bootstrap 4
+- Backend: Flask, Python, SQLite
 - Jquery syntax placed in static/main.js file
 - Used Sessions
