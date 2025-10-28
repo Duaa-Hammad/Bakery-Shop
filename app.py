@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, abort
 from datetime import timedelta
 import os
 from werkzeug.utils import secure_filename
@@ -55,7 +55,8 @@ def login():
             session["role"] = user["role"]
             session["email"] = user["email"]
             return redirect(url_for("index"))
-        return redirect(url_for("login", error="Invalid credentials"))
+        # return redirect(url_for("login", error="Invalid credentials"))
+        return abort(401, "Invalid credentials")
 
 
 @app.route("/logout")
@@ -73,8 +74,7 @@ def dashboard():
     if "username" in session:
         username = session["username"]
         products = db_management.get_all_products()
-        return render_template(
-            "dashboard_pages/dashboard.html", sentence=username, products=products)
+        return render_template("dashboard_pages/dashboard.html", sentence=username, products=products)
     else:
         return redirect(url_for("login"))
 
@@ -115,12 +115,12 @@ def add_product():
         # Check if an image file was uploaded
         image_url = None
         if image_file and image_file.filename != "":
-            filename = secure_filename(image_file.filename)
-            image_folder = os.path.join("static", "user_images")
-            os.makedirs(image_folder, exist_ok=True)
-            image_path = os.path.join(image_folder, filename)
-            image_file.save(image_path)
-            image_url = f"user_images/{filename}"
+            filename = secure_filename(image_file.filename) #Sanitize the file name
+            image_folder = os.path.join("static", "user_images") #Path where images will be saved
+            os.makedirs(image_folder, exist_ok=True) #If the folder does not exists, Create one
+            image_path = os.path.join(image_folder, filename) #Set the full path
+            image_file.save(image_path) #Save the image on the server
+            image_url = f"user_images/{filename}" #Set the image path that will be saved in the DB
 # ----------------------------------------------------------------
 
         # Cannot modify request.form directly because it is immutable
