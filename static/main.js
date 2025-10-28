@@ -11,7 +11,7 @@ $(function () {
 
   // To show the cart drawer when the cart icon is clicked
   $(document).ready(function () {
-    $(".cart-icon").click (function () {
+    $(".cart-icon").on("click", function () {
       $("#cartDrawer").addClass("open");
     });
   });
